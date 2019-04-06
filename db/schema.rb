@@ -10,22 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_06_183441) do
+ActiveRecord::Schema.define(version: 2019_04_06_220319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string "firstname"
-    t.string "string"
-    t.string "lastname"
-    t.string "bio"
-    t.string "photo"
-    t.string "leave"
-    t.string "boolean"
-    t.string "type"
+  create_table "specialities", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "team_members", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_members_on_team_id"
+    t.index ["user_id"], name: "index_team_members_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_specialities", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "speciality_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["speciality_id"], name: "index_user_specialities_on_speciality_id"
+    t.index ["user_id"], name: "index_user_specialities_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "photo"
+    t.boolean "onleave"
+    t.string "type"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "team_members", "teams"
+  add_foreign_key "team_members", "users"
+  add_foreign_key "user_specialities", "specialities"
+  add_foreign_key "user_specialities", "users"
 end
