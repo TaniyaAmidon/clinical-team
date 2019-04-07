@@ -1,12 +1,17 @@
 .navbar {
   justify-content: space-between;
-  background: white;
+  background: rgb(154, 154, 154);
 }
 
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar .navbar-brand img {
-  width: 40px;
+.brand {
+  font-size: 40px;
 }
+
+.nav-link {
+  font-size: 20px; 
+}
+

@@ -1,14 +1,19 @@
-<h1><%=@user.firstname.capitalize%> <%=@user.lastname.capitalize%></h1>
-<img src="<%=@user.photo%>" alt="" style="width:100px; height:100px; border-radius:50%;">
-<ul>
-    <% if @user.onleave == true %>
-       <li>On Leave: <%= "yes" %></li> 
-    <% else%>
-       <li>On Leave: <%= "no" %></li> 
-    <%end%>
-    <li>Bio: <%=@user.bio%></li>
-    <%@user.specialities.each do |spec|%>
-        <li>Speciality: <%=spec.name%></li>
-    <%end%>
-    <%= link_to "Back", teams_path%>
-</ul>
+<br>
+<br>
+<div class="container mt-4">
+    <div class="card p-4">
+        <h1><%=@user.firstname.capitalize%> <%=@user.lastname.capitalize%></h1>
+        <img src="<%=@user.photo%>" alt="" style="width:100px; height:100px; border-radius:50%;">
+      
+            <% if @user.onleave == true %>
+            <p>On Leave: <%= "yes" %></p> 
+            <% else%>
+            <p>On Leave: <%= "no" %></p> 
+            <%end%>
+            <p>Bio: <%=@user.bio%></p>
+            <%@user.specialities.each do |spec|%>
+                <p>Speciality: <%=spec.name%></p>
+            <%end%>
+            <%= link_to "Back", teams_path, class: "btn btn-dark mt-4"%>
+    </div>
+</div>
