@@ -7,7 +7,7 @@
             <img src="<%=user.photo%>" alt="" style="width:50px; height:50px; border-radius:50%;">   
             <br>  
             <p><%= user.firstname %> <%= user.lastname %></p>
-            <p><%= user.type %></p>
+            <p><%= user.profession%></p>
             <%= link_to "Select", team_members_path(:team_id => @team.id, :user_id => user.id), :method => :post, class: "btn btn-secondary" %>
         </div>
     <%end%>

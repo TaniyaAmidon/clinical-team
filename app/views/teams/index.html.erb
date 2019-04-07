@@ -8,7 +8,7 @@
                     <div class="card p-2 mb-4">
                             <img src="<%=user.photo%>" alt="" style="width:50px; height:50px; border-radius:50%;">
                             <p><%= user.firstname.capitalize %> <%= user.lastname.capitalize %></p>
-                            <p><%= user.type%></p>    
+                            <p><%= user.profession%></p>    
                                 <p><%user.specialities.each do |spec| %>
                                     <%= spec.name %>
                                 <%end%></p>       
