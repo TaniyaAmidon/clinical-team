@@ -3,8 +3,8 @@
     <%@users.each do |user| %>
     <img src="<%=user.photo%>" alt="" style="width:100px; height:100px; border-radius:50%;">
     <ul>    
-        <li> <%=user.firstname%>  <%=user.lastname%>: title</li>   
+        <li> <%=user.firstname%>  <%=user.lastname%>: title</li>        
     </ul>
-   
     <%end%>
+    <%= link_to "home", "/"%>
 </div>

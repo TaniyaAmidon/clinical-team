@@ -1,0 +1,8 @@
+<h1>hello</h1>
+<% @users.each do |user| %>
+<ul>
+    <li><%= user.firstname %></li>
+    <%= link_to "Add user to team", team_members_path(:team_id => @team.id, :user_id => user.id), :method => :post %>
+</ul>
+<%end%>
+<%= link_to "team", teams_path %>
