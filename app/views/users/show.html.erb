@@ -1,0 +1,13 @@
+<h1><%=@user.firstname.capitalize%> <%=@user.lastname.capitalize%></h1>
+<img src="<%=@user.photo%>" alt="" style="width:100px; height:100px; border-radius:50%;">
+<ul>
+    <% if @user.onleave == true %>
+       <li>On Leave: <%= "yes" %></li> 
+    <% else%>
+       <li>On Leave: <%= "no" %></li> 
+    <%end%>
+    <li>Bio: <%=@user.bio%></li>
+    <%@user.specialities.each do |spec|%>
+        <li>Speciality: <%=spec.name%></li>
+    <%end%>
+</ul>
