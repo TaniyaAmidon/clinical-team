@@ -8,7 +8,6 @@ class TeamsController < ApplicationController
         @team = Team.find(params[:id])
     end
     
-    
     def new
         @team = Team.new
     end
@@ -16,5 +15,10 @@ class TeamsController < ApplicationController
     def create
         @team = Team.find(params[:id])
         @team = Team.create
-    end    
+    end
+    
+    def delete_team_member
+        TeamMember.where(team_id: params[:team_id], user_id: params[:user_id]).destroy_all
+        redirect_to teams_path
+    end
 end
