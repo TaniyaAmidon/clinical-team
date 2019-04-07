@@ -13,37 +13,44 @@ User.destroy_all
 
 #specialities
 specialities = Speciality.create([
-{name: "Ortho"},
-{name: "cardiac"},
-{name: "general"},
-{name: "neuro"}
+{name: "Orthopedic"},
+{name: "Cardiology"},
+{name: "General Surgery"},
+{name: "Neurology"},
+{name: "Urology"},
+{name: "Pediatrics"}
 ])
 
 puts "User specialities seeded"
 
 #users
-user1 = User.create(firstname: "taniya", lastname: "amidon", onleave: false, bio: "is a  nurse", photo: "https://images.unsplash.com/photo-1548992644-aae87f193063?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
-user2 = User.create(firstname: "gab", lastname: "camarda", onleave: true, bio: "is a  doctor", photo: "https://images.unsplash.com/photo-1548992644-aae87f193063?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
-user3 = User.create(firstname: "peter", lastname: "smith", onleave: false, bio: "is an admin", photo: "https://images.unsplash.com/photo-1548992644-aae87f193063?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+user1 = User.create(firstname: "Derek", lastname: "Shepherd",profession: "Doctor", onleave: false, bio: "Head of Neurosurgery at Seattle Grace Hospital.", photo: "https://cdn-images-1.medium.com/max/2600/1*f7UvlzsujbxYPUgAy1VQ7w.jpeg")
+user2 = User.create(firstname: "Meredith", lastname: "Grey",profession: "Doctor", onleave: true, bio: "Surgical Intern at Seattle Grace Hospital", photo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Greys-Anatomy-Season-7-Promo-9.jpg/220px-Greys-Anatomy-Season-7-Promo-9.jpg")
+user3 = User.create(firstname: "Arizona", lastname: "Robbins",profession: "Doctor", onleave: false, bio: "Attending surgeon and the new chief of pediatric surgery", photo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Dr._Arizona_Robbins.jpg/220px-Dr._Arizona_Robbins.jpg")
+user4 = User.create(firstname: "Carla", lastname: "Espinosa",profession: "Nurse", onleave: false, bio: "head nurse at Sacred Heart Hospital", photo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Carla-scrubs.jpg/250px-Carla-scrubs.jpg")
+user5 = User.create(firstname: "Jane", lastname: "Smith",profession: "Admin",  onleave: false, bio: "Hospital administrator", photo: "data:image/jpeg;base64,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")
 
 puts "users seeded"
 
-userspec1 = UserSpeciality.create(user: user1, speciality: specialities[0])
-userspec1 = UserSpeciality.create(user: user2, speciality: specialities[1])
-userspec1 = UserSpeciality.create(user: user3, speciality: specialities[2])
+userspec1 = UserSpeciality.create(user: user1, speciality: specialities[3])
+userspec2 = UserSpeciality.create(user: user2, speciality: specialities[2])
+userspec3 = UserSpeciality.create(user: user3, speciality: specialities[5])
+userspec4 = UserSpeciality.create(user: user4, speciality: specialities[2])
+userspec5 = UserSpeciality.create(user: user5, speciality: specialities[2])
 
 puts "users spec seeded"
 
 
-
-team1 = Team.create(name: "morning shift")
-team2 = Team.create(name: "afternoon shift")
-team3 = Team.create(name: "night shift")
+team1 = Team.create(name: "Morning shift")
+team2 = Team.create(name: "Afternoon shift")
+team3 = Team.create(name: "Night shift")
 
 
 teammember1 = TeamMember.create(user: user1, team: team1)
 teammember2 = TeamMember.create(user: user2, team: team1)
-teammember3 = TeamMember.create(user:user3, team: team3)
+teammember3 = TeamMember.create(user:user3, team: team2)
+teammember4 = TeamMember.create(user:user3, team: team3)
+teammember5 = TeamMember.create(user:user3, team: team2)
 
 puts "team members created"
 
